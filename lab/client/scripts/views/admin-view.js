@@ -12,7 +12,8 @@ var app = app || {};
       event.preventDefault();
       let token = event.target.passphrase.value;
 
-      // COMMENT: Is the token cleared out of local storage? Do you agree or disagree with this structure?
+      // DONE: Is the token cleared out of local storage? Do you agree or disagree with this structure?
+      // It is not cleared out of local storage. There is currently no way to remove admin status from someone who has obtained it so I think this needs more code. 
       $.get(`${app.ENVIRONMENT.apiUrl}/api/v1/admin`, {token})
         .then(res => {
           if(res) {
